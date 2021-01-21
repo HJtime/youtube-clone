@@ -7,7 +7,7 @@ function App() {
   return(
     <BrowserRouter>
     <Switch>
-      <Route exact path="/">
+      <Route exact path={"/youtube-clone",'/'}>
         <Maker/>
       </Route>
       <Route path="/video_detail">
