@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import SearchHeader from '../search_header/serch_header';
 import VideoList from '../video_list/video_list';
+import styles from './video_detail.module.css'
 
 const VideoDetail = () => {
     const [videos, setVideos] = useState(useLocation().state.video);
-    // const historyState=useLocation().state.video;
     const historyList=useLocation().state.videos;
 
     const onVideoClick=(video)=>{
@@ -12,8 +13,10 @@ const VideoDetail = () => {
     }
 
     return(
-        <section>
-            <div>
+        <div>
+        <SearchHeader/>
+        <section className={styles.section}>
+            <div className={styles.iframe}>
                 <iframe
                 type="text/html"
                 title="youtube video player"
@@ -23,11 +26,16 @@ const VideoDetail = () => {
                 frameBorder="0"
                 allowFullScreen></iframe>
                 <h2>{videos.snippet.title}</h2>
-                <h3>{videos.snippet.channelTitle}</h3>
-                <pre>{videos.snippet.description}</pre>
+                <h3 className={styles.channeltitle}>{videos.snippet.channelTitle}</h3>
+                <pre className={styles.desc}>{videos.snippet.description}</pre>
             </div>
-            <VideoList onVideoClick={onVideoClick} videos={historyList}/>
+            {videos&&<VideoList
+            onVideoClick={onVideoClick}
+            videos={historyList}
+            className={styles.list}
+            display={'list'}/>}
         </section>
+        </div>
     );
 };
 

@@ -1,0 +1,43 @@
+@value makerDarkGrey, makerGrey, makerRed '/src/common/colors.css';
+
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 1em auto;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+    flex-basis: 10%;
+    cursor: pointer;
+}
+
+.img{
+    margin-right: 0.5em;
+    width: 2.5rem;
+}
+
+.title{
+    font-size: 1.5rem;
+}
+
+.input{
+    flex-basis: 80%;
+    height: 2.3em;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.button{
+    flex-basis: 5%;
+    outline: none;
+    border: none;
+    height: 3.5em;
+    background: makerDarkGrey;
+    cursor: pointer;
+}
