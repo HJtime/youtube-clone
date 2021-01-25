@@ -1,8 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './search_header.module.css'
 
-const SearchHeader = ({onSearch}) => {
+const SearchHeader = ({youtube}) => {
+    const [results, setResults] = useState([]);
+    const result=useRef(false);
     const inputRef=useRef();
     const history=useHistory();
 
@@ -20,6 +22,24 @@ const SearchHeader = ({onSearch}) => {
             handleSearch();
         }
     }
+
+    const onSearch=useCallback(query=>{  
+        youtube
+        .search(query)
+        .then(videos=>{setResults(videos);})
+    },[youtube]);
+
+    useEffect(()=>{
+        if(result.current){
+            history.push({
+                pathname:'/search_result',
+                state: {videos:results}
+            });
+        }
+        else{
+            result.current=true;
+        }
+    },[results, history])
 
     const onLogoClick=()=>{
         history.push({

@@ -1,8 +1,7 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import SearchHeader from '../search_header/serch_header';
 import VideoList from '../video_list/video_list';
-import styles from './video_detail.module.css'
+import styles from './video_detail.module.css';
 
 const VideoDetail = () => {
     const [videos, setVideos] = useState(useLocation().state.video);
@@ -14,7 +13,6 @@ const VideoDetail = () => {
 
     return(
         <div>
-        <SearchHeader/>
         <section className={styles.section}>
             <div className={styles.iframe}>
                 <iframe
@@ -29,11 +27,11 @@ const VideoDetail = () => {
                 <h3 className={styles.channeltitle}>{videos.snippet.channelTitle}</h3>
                 <pre className={styles.desc}>{videos.snippet.description}</pre>
             </div>
-            {videos&&<VideoList
+            <VideoList
             onVideoClick={onVideoClick}
             videos={historyList}
             className={styles.list}
-            display={'list'}/>}
+            display={'list'}/>
         </section>
         </div>
     );
