@@ -1,3 +1,29 @@
+# 개요
+REACT(리액트 라우터), PostCSS, Youtube API를 사용한 유튜브 클론 코딩
+[VIEW](https://hjtime.github.io/youtube-clone/)
+
+## SKILL
+* REACT
+* PostCSS
+
+## 기능
+1. 인기 동영상 출력
+2. Youtube 동영상 서치 가능
+3. 디테일 페이지에서 동영상 재생 가능
+4. 페이지 이동 가능(뒤로가기)
+
+
+## 실행 화면
+1. 메인 화면(PC)
+<img src="https://user-images.githubusercontent.com/72139168/106560559-8f4c1980-656a-11eb-8edf-8197e2b1f4aa.PNG" width="500" height="370">
+2. 메인 화면(모바일)
+<img src="https://user-images.githubusercontent.com/72139168/106560574-9410cd80-656a-11eb-80fc-1f4ce0bdccfb.PNG" width="460" height="700">
+3. 디테일 화면
+<img src="https://user-images.githubusercontent.com/72139168/106560579-9541fa80-656a-11eb-9ad6-297411e7cfb5.PNG" width="500" height="370">
+4. 서치 결과 화면
+<img src="https://user-images.githubusercontent.com/72139168/106560582-970bbe00-656a-11eb-97a7-3f2e841a959b.PNG" width="500" height="370">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
